@@ -23,7 +23,22 @@
     
     
 }
+::-webkit-scrollbar{
+    width: 15px;
+    border-radius: 10px;
+}
+::-webkit-scrollbar-track{
+    background-color: #f2d4b4;
+    
+}
+::-webkit-scrollbar-thumb{
+    background-color: #FFB568;
+    border-radius: 10px;
+}
+html{
+    scroll-behavior: smooth;
 
+}
 
  /* Navigation bar css content */
 
@@ -32,9 +47,67 @@
     display: flex;
     justify-content: start;
     padding: 0.3rem;
-   margin-left: 10rem;   
+   margin-left: 10rem; 
+   
+
+   
     
 }
+.side__nav{
+    position: fixed;
+    left: 0;
+    top:30%;
+     font-family: var(--font-family);
+    animation: side linear;
+   visibility: hidden;
+   animation-duration: 10s; 
+   animation-fill-mode: forwards;
+   animation-timing-function: linear;
+
+
+}
+
+@keyframes side{
+    0%{
+        visibility: hidden;
+    }
+    25%{
+        visibility: hidden;
+    }
+
+50%{
+    visibility: hidden;
+}
+
+100%{
+    visibility: visible;
+}
+
+}
+
+
+
+
+
+
+.side__nav div{
+    padding: 20px 0px;
+    transform: rotate(-90deg);
+    cursor: pointer;
+    background-color: var(--primary-color);
+    text-align: center;
+    border-radius: 0px 0px 20px 20px;
+    height: 4rem;
+  
+}
+.side__nav a{
+    color: black;
+    text-decoration: none;
+}
+
+
+
+
 
 .logo{
     margin-top: 15px;
@@ -88,10 +161,6 @@ a:hover{
     width: 4rem;
  cursor: pointer;
 
-
-
-
-
 }
 
 
@@ -108,12 +177,12 @@ a:hover{
 
 .header__contents__bg{
     height: 680px;
-    width:600px ;
+    width:700px ;
     background-color: var(--primary-color);
    top: 0;
     position: absolute;
     right:0;
-    margin-right: 3%;
+    margin-right: 1%;
     z-index: -1;
     
     
@@ -165,6 +234,7 @@ a:hover{
     padding-bottom: 30px;
     font-weight: 800;
     font-family: var(--font-family);
+    margin-top: 1rem;
 }
 
 .header__contents__text span{
@@ -173,13 +243,21 @@ a:hover{
     color: black;
     cursor: pointer;
     font-family: var(--font-family);
+    
+}
+.discover_element {
+    margin-top: 3rem;
 }
 .discover_element a{
     text-decoration: none;
     color: black;
-  
-    
-}
+    background-color: wheat;
+    padding: 10px;
+    z-index: 1;
+
+    }
+
+
 .header__contents__side_text{
     position: absolute;
     left: 5%;
@@ -605,10 +683,7 @@ margin: 0.4rem;
 
 /* Responsive  */
 @media only screen and (max-width: 600px) {
-html{
-    background-color: white;
-    
-}
+
 
 
 
@@ -616,7 +691,7 @@ html{
         height: 500px;
         width: 280px;
        z-index: -1;
-        right: 0;
+       margin-right:0;
        
        
     }
@@ -625,7 +700,7 @@ html{
         height: 400px;
         width: 290px;
         margin-left: 0;
-
+    
       
     }
     .logo{
@@ -654,17 +729,17 @@ html{
     font-size: 25px;
   
 }
-.right-logo{
-    display: flex;
-}
+
+
 .right-logo i{
    
-    transform: translate(-100%,-20%);
-    margin-top: 1.2rem;
+display: none   ;
  
 
 }
-
+.side__nav{
+    display: none;
+}
 
 
 
@@ -677,6 +752,7 @@ html{
     }
     .icons{
         display: block;
+        
         
       
         
@@ -727,6 +803,9 @@ html{
         
  }
 
+
+
+ 
  /* Our Story */
 
  .our_story{
